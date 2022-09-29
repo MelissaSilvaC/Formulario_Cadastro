@@ -345,21 +345,25 @@ public class Form_BD extends javax.swing.JFrame {
     }//GEN-LAST:event_ultimoRegistroActionPerformed
 
     private void VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarActionPerformed
+        
         try{
             con_cliente.resultset.previous();
             mostrar_Dados();
         }catch(SQLException erro){
             JOptionPane.showMessageDialog(null, "Não foi possivel posicionar no registro anterior: "+erro, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }
+        
     }//GEN-LAST:event_VoltarActionPerformed
 
     private void AvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvancarActionPerformed
+        
         try{
             con_cliente.resultset.next();
             mostrar_Dados();
         }catch(SQLException erro){
             JOptionPane.showMessageDialog(null, "Não foi possivel posicionar no proximo registro: "+erro, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }
+        
     }//GEN-LAST:event_AvancarActionPerformed
 
     private void ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirActionPerformed
@@ -509,7 +513,7 @@ public class Form_BD extends javax.swing.JFrame {
             txtTelefone.setText(con_cliente.resultset.getString("telefone"));
             txtEmail.setText(con_cliente.resultset.getString("email"));
         }catch (SQLException erro){
-            JOptionPane.showMessageDialog(null, "Não localizou dados: "+erro, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            
         }
     }
     
